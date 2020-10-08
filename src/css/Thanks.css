@@ -1,0 +1,40 @@
+.thanks-box{
+    text-align: center;
+    margin-top: 70px;
+}
+
+.thanks-icon{
+    color: rgb(17, 165, 17);
+}
+
+.thanks-box > h1{
+    font-size: 60px;
+    margin-top: -5px;
+}
+
+.thanks-box > p{
+    margin-top: -15px;
+    font-size: 23px;
+    padding: 15px;
+}
+
+.thanks-link > a{
+    text-decoration: none;
+    color: rgb(28, 31, 228);
+    font-size: 20px;
+}
+
+.thanks-arrow-icon{
+    color: rgb(28, 31, 228);
+}
+
+@media only screen and (max-width: 400px) {
+    .thanks-box{
+        margin-top: 40px;
+    }
+
+    .thanks-box > h1{
+        font-size: 40px;
+        margin-top: 10px;
+    }
+}

@@ -1,0 +1,45 @@
+.consults-form {
+    background-color: rgba(223, 205, 205, 0.6);
+    padding: 20px;
+    border-radius: 4px;
+    margin: 10px 15px 15px 15px;
+}
+
+.consults-form > label {
+    font-size: 19px;
+}
+
+.consults-form > input {
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    margin-top: 5px;
+    height: 30px;
+    width: 100%;
+}
+
+.consults-form > textarea {
+    width: 100%;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.consults-form > button {
+    border: none;
+    height: 30px;
+    border-radius: 4px;
+    width: 90px;
+    cursor: pointer;
+    margin-top: 15px;
+    outline: none;
+    font-weight: 700;
+    background-color: rgb(197, 197, 197);
+}
+
+.consults-form > button:hover {
+    background-color: rgb(173, 173, 173);
+    transition: 0.5s ease;
+}

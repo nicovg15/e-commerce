@@ -1,0 +1,171 @@
+.navbar{
+    z-index: 2;
+    position: sticky;
+    top: 0;
+    overflow-x: hidden;
+}
+
+.navbar-box{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: rgb(63, 62, 62);
+}
+
+.navbar-box > a > img{
+    width: 100px;
+    margin: 5px 25px 0 15px;
+}
+
+.navbar-form{
+    display: flex;
+}
+
+.navbar-form > input{
+    border: none;
+    outline: none;
+    width: 550px;
+    border-radius: 3px 0 0 3px;
+}
+
+.navbar-form > button{
+    border: none;
+    outline: none;
+    background-color: white;
+    border-radius: 0 3px 3px 0;
+    cursor: pointer;
+}
+
+.navbar-search-icon{
+    color: rgb(63, 62, 62);
+}
+
+.navbar-links{
+    margin-top: 6px;
+    margin-left: 20px;
+}
+
+.navbar-links > a{
+    color: white;
+    text-decoration: none;
+    padding-right: 30px;
+}
+
+.navbar-links > a:hover{
+    color: rgb(221, 220, 220);
+}
+
+.navbar-basket{
+    display: flex;
+    margin-top: 6px;
+    margin-right: 15px;
+}
+
+.navbar-shopping-icon{
+    color: rgb(235, 235, 235);
+    padding-right: 4px;
+    cursor: pointer;
+}
+
+.navbar-basket > span{
+    color: white;
+}
+
+.navbar-links-below{
+    display: none;
+}
+
+
+@media only screen and (max-width: 1247px) {
+    .navbar-links{
+        display: none;
+    }
+
+    .navbar-links-below{
+        display: block;
+        text-align: center;
+        background: linear-gradient(to top, rgb(73, 73, 73), rgb(63, 62, 62)) ;
+        padding: 5px;
+    }
+    
+    .navbar-links-below > a{
+        padding: 15px;
+        text-decoration: none;
+        color: white;
+        font-size: 18px;
+    }
+
+    .navbar-links-below > a:hover{
+        color: rgb(221, 220, 220);
+        transition: 0.5s ease;
+    }
+
+}
+
+@media only screen and (max-width: 965px) {
+    .navbar-form > input{
+        width: 450px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .navbar-form > input{
+        width: 350px;
+    }
+}
+
+@media only screen and (max-width: 680px) {
+    .navbar-form > input{
+        width: 250px;
+    }
+
+}
+
+@media only screen and (max-width: 550px) {
+    .navbar-form > input{
+        display: none;
+    }
+    .navbar-form > button{
+        display: none;
+    }
+    .navbar-box > a > img{
+        margin: 5px 0px 0 80px;
+    }
+    .navbar-basket{
+        margin: 5px 80px 0 0;
+
+    }
+}
+
+@media only screen and (max-width: 465px) {
+    .navbar-box > a > img{
+        margin: 5px 0px 0 60px;
+    }
+
+    .navbar-links-below > a{
+        font-size: 15px;
+        padding: 10px;
+    }
+}
+
+@media only screen and (max-width: 395px) {
+    .navbar-box > a > img{
+        margin: 5px 0px 0 40px;
+    }
+    .navbar-links-below > a{
+        font-size: 12px;
+        padding: 5px;
+    }
+}
+
+@media only screen and (max-width: 330px) {
+    .navbar-box > a > img{
+        margin: 5px 0px 0 20px;
+    }
+}
+
+@media only screen and (max-width: 280px) {
+    .navbar-box > a > img{
+        margin: 5px 0px 0 0px;
+    }
+}
