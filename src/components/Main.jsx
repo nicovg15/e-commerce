@@ -25,7 +25,7 @@ function Main() {
                 <Grid item xs={12} lg={4}>
                     <Product id="555" content="Lorem, ipsum dolor sit amet consectetur ita ut optio quia repellendus! Odit consequuntur laudantium asperiores voluptate tempore, non ut vitae autem fuga tenetur vel atque, excepturi cum sed porro!" price={40} titulo='Lights' imagen="https://static.wixstatic.com/media/695971_4c6ff3c2ac7d4ee98d56c9a3af06281c~mv2.jpg/v1/fill/w_451,h_596,al_c,lg_1,q_90/695971_4c6ff3c2ac7d4ee98d56c9a3af06281c~mv2.webp"/>
                 </Grid>
-                <Grid item xs={12} id="consults">
+                <Grid item xs={12} id="inquiries">
                     <Consults />
                 </Grid>
             </Grid>

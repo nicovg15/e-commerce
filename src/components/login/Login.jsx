@@ -37,13 +37,13 @@ function Login(){
                 <label htmlFor="email">E-mail</label>
                 <input type="email" id="email" value={email} onChange={e => setEmail(e.target.value)} required/>
                 <span className="login-error">{error ? error : ""}</span>
-                <label htmlFor="password">Contraseña</label>
+                <label htmlFor="password">Password</label>
                 <input type="password" id="password" value={password} onChange={e => setPassword(e.target.value)} required/>
                 <span className="login-error">{error ? error : ""}</span>                
-                <button onClick={handleOnSubmit} type="submit" className="login-btn-ing">INGRESAR</button>
+                <button onClick={handleOnSubmit} type="submit" className="login-btn-ing">Log In</button>
                 
-                <p>Al continuar, aceptas las Condiciones de uso y el Aviso de privacidad de Acson.</p>
-                <button onClick={handleOnRegister} type="submit" className="login-btn-reg">REGISTRARSE</button>
+                <p>By continuing, you agree to Acson's Terms of Use and Privacy Notice.</p>
+                <button onClick={handleOnRegister} type="submit" className="login-btn-reg">Sign Up</button>
             </form>
         </div>
     )

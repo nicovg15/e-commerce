@@ -38,7 +38,7 @@ function Navbar() {
                     <a href="#audio">AUDIO</a>
                     <a href="#accesories">ACCESORIES</a>
                     <Link to={!user && "/login"}><span onClick={handleAuth}>{!user ? 'LOG IN' : 'LOG OUT'}</span></Link>
-                    <a href="#consults">CONSULTS</a>
+                    <a href="#inquiries">INQUIRIES</a>
                 </div>
                 <Link to='checkout' className="navbar-basket">
                     <ShoppingCartIcon className="navbar-shopping-icon"/>
