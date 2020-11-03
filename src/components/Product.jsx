@@ -2,9 +2,12 @@ import React from 'react'
 import '../css/Product.css'
 import { useStateValue } from './context/StateProvider'
 import EuroIcon from '@material-ui/icons/Euro';
+import {db} from './firebase/firebase'
 
 function Product({id, price, titulo, content, imagen}) {
     const [{basket, user}, dispatch] = useStateValue()
+    const [num, setNum] = React.useState()
+
 
     const addToBasket = () => {
         dispatch({
@@ -17,6 +20,8 @@ function Product({id, price, titulo, content, imagen}) {
                 price: price
             }
         })
+        
+        db.collection('users').doc(user?.uid).collection('basket').add({productId: id, title: titulo, cont: content, img: imagen, price: price})
     } 
 
     return (

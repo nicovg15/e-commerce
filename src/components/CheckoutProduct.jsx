@@ -1,20 +1,23 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import '../css/CheckoutProduct.css'
 import { useStateValue } from './context/StateProvider'
 import EuroIcon from '@material-ui/icons/Euro';
+import {db} from './firebase/firebase'
+import { firestore } from 'firebase';
 
 function CheckoutProduct({id, price, titulo, content, imagen, hiddenButton}){
     const [{basket, user}, dispatch] = useStateValue();
 
     const removeFromBasket = () => {
-        dispatch({
-            type: 'REMOVE_FROM_BASKET',
-            id: id,
-            titulo: titulo,
-            imagen: imagen,
-            content: content,
-            price: price
-        })
+        firestore().collection('users').doc(user?.uid).collection('basket').doc(id.toString()).delete();
+        // dispatch({
+        //     type: 'REMOVE_FROM_BASKET',
+        //     id: id,
+        //     titulo: titulo,
+        //     imagen: imagen,
+        //     content: content,
+        //     price: price
+        // })
     }
     
     return(

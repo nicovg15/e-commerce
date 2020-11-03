@@ -1,12 +1,14 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import '../css/Navbar.css'
 import SearchIcon from '@material-ui/icons/Search';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import { Link, useHistory } from "react-router-dom";
 import { useStateValue } from './context/StateProvider'
 import { auth } from './firebase/firebase'
+import {firestore} from 'firebase'
 
 function Navbar() {
+    const [number,setNumber] = useState()
     const [{basket, user}, dispatch] = useStateValue()
     const [search, setSearch] = useState()
     const history = useHistory()
