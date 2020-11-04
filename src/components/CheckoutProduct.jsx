@@ -10,14 +10,6 @@ function CheckoutProduct({id, price, titulo, content, imagen, hiddenButton}){
 
     const removeFromBasket = () => {
         firestore().collection('users').doc(user?.uid).collection('basket').doc(id.toString()).delete();
-        // dispatch({
-        //     type: 'REMOVE_FROM_BASKET',
-        //     id: id,
-        //     titulo: titulo,
-        //     imagen: imagen,
-        //     content: content,
-        //     price: price
-        // })
     }
     
     return(

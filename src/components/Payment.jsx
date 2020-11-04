@@ -1,7 +1,6 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useState, useContext} from 'react'
 import '../css/Payment.css'
 import { useStateValue } from './context/StateProvider'
-import CheckoutProduct from './CheckoutProduct'
 import {Link, useHistory} from 'react-router-dom'
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js'
 import CurrencyFormat from 'react-currency-format'
@@ -9,9 +8,11 @@ import {getBasketTotal} from './context/reducer'
 import {db} from './firebase/firebase'
 import axios from 'axios'
 import Grid from '@material-ui/core/Grid';
+import newContext from './context/newContext'
 
 
 function Payment() {
+    const {newBasket, setNewBasket} = useContext(newContext)
     const [{basket,user}, dispatch] = useStateValue()
     const history = useHistory()
     const stripe = useStripe()
@@ -69,7 +70,7 @@ function Payment() {
     return (
         <div className="payment-box ">
            <div className="payment-container">
-               <h1>Checkout (<Link to="/checkout">{basket?.length}  items</Link>)</h1>
+               <h1>Checkout (<Link to="/checkout">{newBasket}  items</Link>)</h1>
                 <Grid container className="payment-section">
                     <Grid item xs={12} lg={3} className="payment-title">
                         <h3>Payment Method</h3>
@@ -81,13 +82,12 @@ function Payment() {
                                 <CurrencyFormat
                                     renderText={(value) => (
                                         <div>
-                                        <h3>Orden Total: {value}</h3>
                                         <h3>You have to be logged in to pay</h3>
                                         <h5>This is just a demo. So just add 42 consecutively as many times as you can.</h5>
                                         </div>
                                     )}
                                     decimalScale={2}
-                                    value={getBasketTotal(basket)}
+                                    value={70}
                                     displayType={"text"}
                                     thousandSeparator={true}
                                     prefix={"€"}

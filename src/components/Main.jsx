@@ -1,9 +1,12 @@
-import React from 'react'
+import React, {useEffect, useContext} from 'react'
 import '../css/Main.css'
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Product from './Product';
 import Consults from './Consults';
+import newContext from './context/newContext'
+import {firestore} from 'firebase'
+import { useStateValue } from './context/StateProvider'
 
 const products = [
     {id: 111, content: "Lorem, ipsum dolor sit amet consectetur ita ut", price: 70, titulo:'Headphones', imagen:"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQy86qoY4qS3ZLkkpKjQdafWCnf_NLhOGbRaA&usqp=CAU"},
@@ -14,6 +17,16 @@ const products = [
 ]
 
 function Main() {
+    const {newBasket, setNewBasket} = useContext(newContext)
+    const [{basket, user}, dispatch] = useStateValue()
+
+    useEffect(() => {
+        if(user){
+            firestore().collection('users').doc(user?.uid).collection('basket').get().then(snapshot => {
+                setNewBasket(snapshot.size)
+            })        
+        }
+    }, [newBasket, {basket, user}])
 
     return (
         <Container maxWidth="lg" className="main-box">

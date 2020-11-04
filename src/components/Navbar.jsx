@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useContext } from 'react'
 import '../css/Navbar.css'
 import SearchIcon from '@material-ui/icons/Search';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import { Link, useHistory } from "react-router-dom";
 import { useStateValue } from './context/StateProvider'
 import { auth } from './firebase/firebase'
-import {firestore} from 'firebase'
+import newContext from './context/newContext'
 
 function Navbar() {
-    const [number,setNumber] = useState()
+    const {newBasket, setNewBasket} = useContext(newContext)
     const [{basket, user}, dispatch] = useStateValue()
     const [search, setSearch] = useState()
     const history = useHistory()
@@ -23,7 +23,6 @@ function Navbar() {
             auth.signOut()
         }
     }
-
     return (
         <div className="navbar">
             <div className="navbar-box">
@@ -44,7 +43,7 @@ function Navbar() {
                 </div>
                 <Link to='checkout' className="navbar-basket">
                     <ShoppingCartIcon className="navbar-shopping-icon"/>
-                    <span>{basket?.length}</span>
+                    <span>{newBasket}</span>
                 </Link>
             </div>
             <div className="navbar-links-below">
